@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="me.g13n.gridimagesearch.GridImageSearchActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <EditText
+        android:id="@+id/etSearchTerm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:ems="13"
+        android:hint="@string/search_terms_hint"
+        android:imeOptions="actionDone" >
+
+        <requestFocus/>
+    </EditText>
+
+    <GridView
+        android:id="@+id/gvResultImages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etSearchTerm"
+        android:layout_alignStart="@+id/etSearchTerm"
+        android:layout_below="@+id/etSearchTerm"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/btnLoadMore"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/gvResultImages"
+        android:layout_below="@+id/gvResultImages"
+        android:text="@string/load_more"
+        android:onClick="onLoadMore" />
+    
+    <Button
+        android:id="@+id/btnSearch"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/etSearchTerm"
+        android:layout_alignBottom="@+id/etSearchTerm"
+        android:text="@string/search"
+        android:onClick="onSearch" />
+
+</RelativeLayout>
